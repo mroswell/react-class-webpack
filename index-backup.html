@@ -121,75 +121,27 @@
         }
       ]
     };
-
-class Photo extends React.Component {
-
-  render() {
-
-    return (
-        <div className="photo">
-          <img src="https://unsplash.it/g/300/200
-" alt="Photo" />
-        </div>
-    )
-  }
-}
-
-class Bio extends React.Component {
-
-  render() {
-
-    return (
-        <div className="bio">
-          <h1 className="name">Chris.name</h1>
-          <h2 className="location">Brooklyn, New York</h2>
-          <div className="occupation">
-            <p>Protecting Freedom @ onemonthedu</p>
+    ReactDOM.render(
+        <div className="card">
+          <div className="photo">
+            <img src="images/chris-merica.png" alt="Photo" />
           </div>
-        </div>
-    )
-  }
-}
-
-class Updates extends React.Component {
-    render() {
-      return (
-      <div className="updates">
-        <ul>
-          <li className="update">Updates</li>
-          <li className="update">Updates</li>
-        </ul>
-      </div>
-      )
-      }
-    }
-class Card extends React.Component {
-    render() {
-      return(
-          <div className="card">
-            <Photo />
-            <Bio name ={"Chris.name"} />
-            <Updates />
+          <div className="bio">
+            <h1 className="name">Chris.name</h1>
+            <h2 className="location">Brooklyn, New York</h2>
+            <div className="occupation">
+              <p>Protecting Freedom @ onemonthedu</p>
             </div>
-      )
-      }
-      }
-
-
-    ReactDOM.render(<Card />,document.getElementById('app')
+          </div>
+          <div className="updates">
+            <ul>
+              <li className="update">Updates</li>
+              <li className="update">Updates</li>
+            </ul>
+          </div>
+        </div> ,
+    document.getElementById('app')
     );
   </script>
-<!--<div className="card">-->
-  <!--<div className="photo">-->
-    <!--<img src="images/chris-merica.png" alt="Photo" />-->
-  <!--</div>-->
-  <!--<div className="bio">-->
-    <!--<h1 className="name">Chris.name</h1>-->
-    <!--<h2 className="location">Brooklyn, New York</h2>-->
-    <!--<div className="occupation">-->
-      <!--<p>Protecting Freedom @ onemonthedu</p>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
 </html>
 
