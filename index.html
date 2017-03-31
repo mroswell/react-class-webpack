@@ -1,4 +1,4 @@
-CTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -87,31 +87,61 @@ CTYPE html>
 
   <div id="app">
       
-     <div class="card">
-      <div class="photo">
-        <img src="images/chris-merica.png" alt="Photo">
-      </div>
-      <div class="bio">
-        <h1 class="name">Chris.name</h1>
-        <h2 class="location">Brooklyn, New York</h2>
-        <div class="occupation">
-          <p>Protecting Freedom @ onemonthedu</p>
-        </div>
-      </div>
-      <div class=updates>
-         <ul>
-           <li class="update">Updates</li>
-           <li class="update">Updates</li>
-         </ul>
-      </div>
-     </div>
+
 
   </div>
 
 
 </body>
-  <script>
-
+  <script type ="text/babel">
+    var person = {
+      name: 'Chris Castig',
+      location: 'Brooklyn, New York',
+      occupation: {
+        title: 'Protecting Freedom',
+        employer: '@onemonthedu'
+      },
+      photo: './images/chris-merica.png',
+      updates: [
+        {
+          platform: 'twitter',
+          status: 'I\'m happy, hope you\'re happy too!'
+        },
+        {
+          platform: 'twitter',
+          status: 'The better the singer\'s voice, the harder it is to hear what they\'re saying'
+        },
+        {
+          platform: 'twitter',
+          status: 'Fear makes the wolf look bigger'
+        },
+        {
+          platform: 'facebook',
+          status: 'If you\'re working on something that you think is going to get accomplished in this lifetime then you’re not thinking big enough'
+        }
+      ]
+    };
+    ReactDOM.render(
+        <div className="card">
+          <div className="photo">
+            <img src="images/chris-merica.png" alt="Photo" />
+          </div>
+          <div className="bio">
+            <h1 className="name">Chris.name</h1>
+            <h2 className="location">Brooklyn, New York</h2>
+            <div className="occupation">
+              <p>Protecting Freedom @ onemonthedu</p>
+            </div>
+          </div>
+          <div className="updates">
+            <ul>
+              <li className="update">Updates</li>
+              <li className="update">Updates</li>
+            </ul>
+          </div>
+        </div> ,
+    document.getElementById('app')
+    );
   </script>
 </html>
 
