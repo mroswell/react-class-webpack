@@ -62,10 +62,10 @@ class Updates extends React.Component {
 
   updates() {
 
-    return this.props.updates.map(function(update) {
+    return this.props.updates.map(function(update, index) {
 
       return (
-          <li className="update">
+          <li className={"update " + update.platform} key={index}>
             {update.status}
           </li>
       )
