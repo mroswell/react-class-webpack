@@ -55,13 +55,29 @@ class Bio extends React.Component {
   }
 }
 
+
+
 class Updates extends React.Component {
+
+
+  updates() {
+
+    return this.props.updates.map(function(update) {
+
+      return (
+          <li className="update">
+            {update.status}
+          </li>
+      )
+    });
+
+  }
+
   render() {
     return (
       <div className="updates">
       <ul>
-      <li className="update">Updates</li>
-      <li className="update">Updates</li>
+        {this.updates()}
       </ul>
       </div>
   )
@@ -74,7 +90,7 @@ class Card extends React.Component {
       <div className="card">
       <Photo photo={person.photo} />
       <Bio name ={person.name} location={person.location} occupation = {person.occupation}/>
-      <Updates />
+      <Updates updates={person.updates} />
       </div>
   )
   }
