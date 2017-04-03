@@ -1,20 +1,20 @@
-const person = {
-  name: 'Chris Castig',
-  location: 'Brooklyn, New York',
+const recipe = {
+  name: 'Basil Pizza',
+  location: 'The Coffeeshop',
   occupation: {
-    title: 'Protecting Freedom',
-    employer: '@onemonthedu'
+    title: 'Fresh from the brick oven',
+    author: 'Margie'
   },
-  photo: 'https://unsplash.it/g/300/200',
+  photo: 'http://lorempixel.com/output/food-q-c-280-200-3.jpg',
   updates: [{
     platform: 'twitter',
-    status: 'I\'m happy, hope you\'re happy too!'
+    status: 'I\'m vegan, and wonder if you can substitute a vegan cheese'
   }, {
     platform: 'twitter',
-    status: 'The better the singer\'s voice, the harder it is to hear what they\'re saying'
+    status: 'The better the singer\'s voice, the more they shouldn\'t eat pizza.'
   }, {
     platform: 'twitter',
-    status: 'Fear makes the wolf look bigger'
+    status: 'Hunger makes the pizza look smaller'
   }, {
     platform: 'facebook',
     status: 'If you\'re working on something that you think is going to get accomplished in this lifetime then you\'re not thinking big enough'
@@ -28,7 +28,7 @@ class Photo extends React.Component {
     return React.createElement(
       'div',
       { className: 'photo' },
-      React.createElement('img', { src: 'https://unsplash.it/g/300/200 ', alt: 'Photo' })
+      React.createElement('img', { src: this.props.photo })
     );
   }
 }
@@ -57,8 +57,8 @@ class Bio extends React.Component {
           'p',
           null,
           this.props.occupation.title,
-          ' at ',
-          this.props.occupation.employer
+          ' by ',
+          this.props.occupation.author
         )
       )
     );
@@ -69,11 +69,11 @@ class Updates extends React.Component {
 
   updates() {
 
-    return this.props.updates.map(function (update) {
+    return this.props.updates.map(function (update, index) {
 
       return React.createElement(
         'li',
-        { className: 'update' },
+        { className: "update " + update.platform, key: index },
         update.status
       );
     });
@@ -97,9 +97,9 @@ class Card extends React.Component {
     return React.createElement(
       'div',
       { className: 'card' },
-      React.createElement(Photo, { photo: person.photo }),
-      React.createElement(Bio, { name: person.name, location: person.location, occupation: person.occupation }),
-      React.createElement(Updates, { updates: person.updates })
+      React.createElement(Photo, { photo: recipe.photo }),
+      React.createElement(Bio, { name: recipe.name, location: recipe.location, occupation: recipe.occupation }),
+      React.createElement(Updates, { updates: recipe.updates })
     );
   }
 }
